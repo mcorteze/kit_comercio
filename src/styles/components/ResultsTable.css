@@ -1,0 +1,113 @@
+/* ResultsTable */
+.results-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.tabs {
+    display: flex;
+    padding: 1rem 1rem 0;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.tab-btn:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    color: var(--primary);
+    background: rgba(139, 92, 246, 0.1);
+    border-bottom: 2px solid var(--primary);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    padding: 1rem;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--text-main);
+}
+
+.results-table th,
+.results-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.results-table th {
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.results-table tr:last-child td {
+    border-bottom: none;
+}
+
+.results-table tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.diff {
+    color: var(--error);
+    font-weight: 700;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.badge.match {
+    background: rgba(52, 211, 153, 0.2);
+    color: #34d399;
+}
+
+.badge.qty-mismatch {
+    background: rgba(248, 113, 113, 0.2);
+    color: #f87171;
+}
+
+.badge.price-mismatch {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+}
+
+.badge.double-mismatch {
+    background: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+.badge.missing-in-factory {
+    background: rgba(148, 163, 184, 0.2);
+    color: #94a3b8;
+}
+
+.badge.surprise-item {
+    background: rgba(167, 139, 250, 0.2);
+    color: #a78bfa;
+}

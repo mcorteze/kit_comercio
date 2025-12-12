@@ -1,0 +1,90 @@
+.analysis-container {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.analysis-container h3 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 0.5rem;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.analysis-column h4 {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-size: 0.95rem;
+}
+
+.stat-row.main {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 0.75rem;
+}
+
+.stat-row.summary {
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: none;
+    padding-top: 0.75rem;
+    font-weight: 600;
+}
+
+.breakdown {
+    padding-left: 0.5rem;
+}
+
+.good {
+    color: var(--success);
+}
+
+.bad {
+    color: var(--error);
+}
+
+.diff-pos {
+    color: var(--error);
+}
+
+/* More cost/qty usually implies error/extra charge aspect visually */
+.diff-neg {
+    color: var(--success);
+}
+
+/* Less charge */
+
+/* Or purely mathematical colors */
+.diff-pos {
+    color: #f87171;
+}
+
+/* Red-ish */
+.diff-neg {
+    color: #34d399;
+}
+
+/* Green-ish */
+
+@media (max-width: 768px) {
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+}
