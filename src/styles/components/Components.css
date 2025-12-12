@@ -75,8 +75,9 @@
 }
 
 .card-info h3 {
-    font-size: 2rem;
+    font-size: 1rem;
     line-height: 1;
+    font-weight: 400;
     margin-bottom: 0.25rem;
 }
 

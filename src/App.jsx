@@ -24,7 +24,7 @@ function App() {
 
   const [selectedOrder, setSelectedOrder] = useState('');
   const [availableOrders, setAvailableOrders] = useState([]);
-  const [includeMissing, setIncludeMissing] = useState(true);
+  const [includeMissing, setIncludeMissing] = useState(false);
 
   const [totals, setTotals] = useState({
     internalQty: 0,
@@ -44,7 +44,11 @@ function App() {
   // Auto-process when both files are loaded or order changes
   useEffect(() => {
     if (internalData.length > 0 && factoryData.length > 0) {
-      processReconciliation();
+      if (selectedOrder === '') {
+        setResults(null);
+      } else {
+        processReconciliation();
+      }
     }
   }, [internalData, factoryData, selectedOrder, includeMissing]);
 
@@ -81,7 +85,7 @@ function App() {
       let filteredInternal = internalData;
       let filteredFactory = factoryData;
 
-      if (selectedOrder) {
+      if (selectedOrder && selectedOrder !== 'all') {
         filteredInternal = internalData.filter(item => item.ORDEN_PEDIDO === selectedOrder);
         filteredFactory = factoryData.filter(item => item.ORDEN_PEDIDO === selectedOrder);
       }
@@ -173,7 +177,8 @@ function App() {
                   onChange={(e) => setSelectedOrder(e.target.value)}
                   className="order-dropdown"
                 >
-                  <option value="">Todas las Órdenes</option>
+                  <option value="" disabled>Seleccione una Orden...</option>
+                  <option value="all">Todas las Órdenes</option>
                   {availableOrders.map(order => (
                     <option key={order} value={order}>{order}</option>
                   ))}
